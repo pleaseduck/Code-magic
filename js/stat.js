@@ -11,8 +11,6 @@ window.renderStatistics = function(ctx, names, times) {
   ctx.fillText('Результаты:', 120, 56);
   var max = -1;
   var maxIndex = -1;
-console.log(names)
-console.log(times)
 for (var i = 0; i < times.length; i++) {
   var time = times[i];
   if (time > max) {
@@ -30,15 +28,22 @@ var indent = 40;
 var initialX = canvasWidth - indent*2;
 var initialY = 80;
 var lineHeight = 15;
+
 ctx.rotate(Math.PI);
 for(var i = 0; i < times.length; i++) {
+  if (i == 2) {
+    ctx.fillStyle = 'rgba(255, 0, 0, 1)';
+    ctx.fillRect(initialX - 100*i + barWidth*i, 170, barWidth, times[i]*step);
+  } else {
+  ctx.fillStyle = 'rgba(0, 17, 255, 0.7)';
   ctx.fillRect(initialX - 100*i + barWidth*i, 170, barWidth, times[i]*step);
 }
-ctx.translate(-540, -420);
+}
+
 ctx.rotate(Math.PI);
+ctx.translate(-540, -400);
 for(var i = 0; i < times.length; i++) {
- ctx.fillText(names[i],indent*2+120 , 180);
-//for(var i = 0; i < times.length; i++) {
-//    ctx.fillText(names[i],initialX - 100*i + barWidth*i, 180);
+    ctx.fillStyle = 'rgb(0, 0, 0)';
+ ctx.fillText(names[i],140 + indent + barWidth*i + 50*i, 250);
 }
 }
