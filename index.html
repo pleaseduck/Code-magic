@@ -159,7 +159,7 @@
     </div>
   </form>
 </div>
-
+<canvas id="statsCloud" width="420" height="270"></canvas>
 <footer>
   <p><a href="http://htmlacademy.ru" class="footer-link"><img src="img/htmlacademy-logo.png" alt="HTML Academy"
                                                               width="130">Сделано в HTML Academy</a>в 2017 году</p>
@@ -180,7 +180,30 @@
     <p class="setup-similar-label">Петр Петров</p>
   </div>
 </template>
+<script>
+  var fireballSize = 22;
+  var getFireballSpeed =   function setFireballSpeed(left) {
+     if (left) {
+       return 5;
+     } else {
+       return 2;
+     }
+     };
+  var wizardSpeed = 3;
+  var wizardWidth = 70;
+  var wizardHeight = setWizardHeight(wizardWidth);
+  function getWizardX(width) {
+    return width/2 - wizardWidth/2
+  }
+  function getWizardY(height) {
+    return height/3 + wizardHeight/2
+  }
+  function setWizardHeight(wizardWidth) {
+    return wizardWidth*1.337
+  }
 
+</script>
+<script src="js/stat.js"></script>
 <script src="js/game.js"></script>
 
 </body>

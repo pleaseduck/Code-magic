@@ -48,7 +48,6 @@ window.Game = (function () {
   };
 
   var NAMES = ['Кекс', 'Катя', 'Игорь'];
-
   /**
    * Порядок прохождения уровней.
    * @type {Array.<Level>}
